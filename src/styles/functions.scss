@@ -1,0 +1,57 @@
+// Scss Function:
+//==================================
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;       
+          box-shadow: $shadow;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin border-radius-mixin($radius) {
+-webkit-border-radius: $radius !important;
+-moz-border-radius: $radius !important;
+border-radius: $radius !important;
+}
+
+@mixin box-shadow($params) {
+  -webkit-box-shadow: $params; 
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+
+
+// Black vertion 
+
+$shadows: 0 2px 5px 0 rgba($black,.16), 0 2px 10px 0 rgba($black,.12);
+$color-shadows: 0 2px 5px 0 rgba($black,.16), 0 2px 10px 0 rgba($black,.12);
+$color-shadows-contact: 0 0px 2px 0 rgba($black,.16), 0 0px 2px 0 rgba($black,.12);
+$color-shadows-contact-2x: 0 0px 2px 0 rgba($black,.4), 0 0px 1px 1px rgba($black,.04);
+$shadow-contact: 0px 0px 3px 1px rgba($black,.16);
+$shadow-contact-color: 0px 0px 3px 1px rgba($main-color,.50);
+
+
+// White vertion 
+
+$shadows: 0 2px 5px 0 rgba($black,.16), 0 2px 10px 0 rgba($black,.12);
+$color-shadows: 0 2px 5px 0 rgba($black,.16), 0 2px 10px 0 rgba($black,.12);
+$color-shadows-contact: 0 0px 2px 0 rgba($black,.16), 0 0px 2px 0 rgba($black,.12);
+$color-shadows-contact-w-2x: 0 0px 1px 0 rgba($dark-color,.4), 0 0px 1px 0px rgba($dark-color,.04);
+
+.shadow-1 { 
+  @include box-shadow($shadows);
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}

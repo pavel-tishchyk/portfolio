@@ -1,0 +1,418 @@
+/**
+ * -------------------
+ *  Defult CSS 
+ * -------------------
+ */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ 
+html {
+	scroll-behavior: smooth;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	font-family: $font-1;
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 500;
+	overflow-x: hidden !important;
+	text-align: left;
+	position: relative;
+	color: $white;
+	opacity: 0.9;
+	background-color: $black-bg;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+::placeholder,
+div,
+ul > li,
+.form-control {
+	color: $white;
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+span {
+	color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-1;
+	font-weight: bold;
+}
+
+p {
+	opacity: 0.9;
+}
+
+.nav li a {
+	text-decoration: none !important;
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px;
+	background-color: transparent;
+	@include transition(color 0.3s ease);
+
+	&:hover {
+		background-color: transparent;
+	}
+
+	&:focus {
+		background-color: transparent;
+		outline: 0 !important;
+	}
+}
+
+a {
+	text-decoration: none !important;
+	cursor: pointer;
+	padding: 0px;
+	background-color: transparent;
+	@include transition(color 0.3s ease);
+	opacity: 0.9;
+
+	&:hover {
+		color: $main-color-1;
+		background-color: transparent;
+	}
+
+	&:focus {
+		background-color: transparent;
+		outline: 0 !important;
+	}
+}
+
+/**
+ * ---------------------
+ *   Defult Button Style
+ * ---------------------
+ */
+.btn {
+	@include transition(color 0.3s ease);
+	padding: 8px 30px;
+	font-weight: bold;
+	border-radius: 20px;
+	outline: 0;
+
+	&:last-child {
+		margin-right: 0px !important;
+	}
+
+	&:hover,
+	&:focus {
+		// color: $light-color;
+		outline: 0;
+	}
+
+	.icon {
+		position: relative;
+		top: 2px;
+		img {
+			position: relative;
+			top: -3px;
+			width: 14px;
+		}
+	}
+
+	&.btn-fill {
+		background: $main-color;
+		border-color: $main-color;
+		color: $white;
+		opacity: 1;
+		outline: 0;
+
+		&:hover,
+		&:active {
+			background: $main-color;
+			border-color: $main-color;
+			color: $white;
+			opacity: 1;
+			outline: 0;
+		}
+		&:active {
+			background: $main-color;
+			border-color: $main-color;
+			color: $white;
+			opacity: 1;
+			outline: 0;
+		}
+	}
+
+	&.left-icon {
+		.icon {
+			margin-right: 15px;
+		}
+	}
+
+	&.right-icon {
+		.icon {
+			margin-left: 15px;
+		}
+	}
+
+	&.white-btn-border {
+		// font-size: 24px;
+		// font-weight: 300;
+		// border: 1px solid;
+		// padding: 18px 25px;
+
+		&:hover {
+			// border-color: darken($main-color, 5%);
+		}
+	}
+
+	&.btn-border {
+		background-color: transparent;
+		// border-color: fade($light-color, 100%);
+
+		&:hover {
+			// background-color: darken($main-color, 5%);
+		}
+	}
+	&.white-btn-border {
+		background-color: transparent;
+		border-color: $white;
+
+		&:hover {
+			// background-color: darken($main-color, 5%);
+		}
+	}
+
+	&.btn-round {
+		padding: 15px;
+		// background-color: $main-color;
+		border-radius: 50%;
+		width: 65px;
+		height: 65px;
+		// color: fade($light-color, 100%);
+		font-size: 24px;
+		text-align: center;
+		// .box-shadow(0 13px 42px 0 fade($shadow-color, 25%));
+
+		.icon {
+			top: 7px;
+		}
+	}
+
+	&.apple,
+	&.androad {
+		@include border-radius-mixin(3px);
+		padding: 9px 28px;
+		height: 82px;
+		// background: $background-1;
+		// border-color: $background-1;
+
+		img {
+			width: 35px;
+			height: 100%;
+			float: left;
+		}
+
+		.icon {
+			font-size: 60px;
+			float: left;
+		}
+
+		span {
+			display: block;
+			@include transition(color 0.3s ease);
+		}
+
+		.group {
+			float: right;
+		}
+
+		.big,
+		.small {
+			text-align: left;
+			margin-left: 7px;
+			line-height: 30px;
+		}
+
+		.big {
+			font-size: 24px;
+			font-weight: 400;
+		}
+
+		.small {
+			font-size: 16px;
+		}
+
+		&:hover {
+			// background-color: $main-color;
+			// border-color:  $main-color;
+		}
+	}
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+	outline: thin dotted;
+	outline: 0px auto -webkit-focus-ring-color !important;
+	outline-offset: -2px;
+	// color: $light-color;
+}
+
+.btn-text-link {
+	padding: 50px 0 0 0;
+	text-align: center;
+	// color: fade($dark-color, 85%);
+
+	a {
+		// color: $main-color-1;
+		margin-left: 10px;
+	}
+}
+
+/**
+ * ------------------
+ * List
+ * ------------------
+ */
+ul {
+	margin: 0;
+	padding: 0;
+	li {
+		list-style-type: none;
+	}
+}
+
+/**
+ * ---------------------------------
+ *  Section Background Size Property
+ * ---------------------------------
+ */
+.bg-cover {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: initial;
+	background-repeat: no-repeat;
+}
+
+.center {
+	float: none;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.section-title {
+	text-align: center;
+
+	h2 {
+		margin-bottom: 60px;
+	}
+
+	h3 {
+		font-size: 30px;
+		line-height: 40px;
+		color: $white;
+		font-weight: bold;
+		margin-bottom: 60px;
+	}
+}
+
+.section-separator {
+	padding: 60px 0;
+	padding-top: 100px;
+}
+
+.image-bg {
+	background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	background-position: center center;
+}
+
+.map-image {
+	background-image: url(../images/map-color-overlay.png);
+}
+
+button, .btn {
+	outline: 0;
+
+	&:hover,
+	&:focus {
+		outline: 0;
+	}
+}
+
+.form-control {
+	@include box-shadow($main-color);
+	background-color: transparent;
+	border-color: $white;
+	margin-bottom: 20px;
+	height: 60px;
+	line-height: 60px;
+	outline: none;
+
+	&:focus {
+		@include box-shadow($main-color);
+		background-color: transparent;
+		border-color: $main-color;
+		color: $white;
+	}
+
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+		transition: background-color 5000s;
+		-webkit-text-fill-color: #fff !important;
+	}
+}
+
+.form-control {
+	padding: 20px;
+	@include box-shadow($shadow-contact);
+
+	&:focus {
+		// @include box-shadow(0px, 0px, 2px, 0px, rgba($main-color, 1), false);
+		@include box-shadow($shadow-contact-color);
+		border-color: transparent;
+	}
+}
+
+.contact-message {
+	@include box-shadow($shadow-contact);
+	background-color: transparent;
+	border-color: transparent;
+	margin-bottom: 20px;
+	width: 100%;
+	padding: 20px;
+	outline: 0;
+
+	&:focus {
+		@include box-shadow($shadow-contact-color);
+		border-color: transparent;
+	}
+}
