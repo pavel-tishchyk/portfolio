@@ -10,7 +10,7 @@ import Portfolio from './components/Portfolio';
 import Footer from './components/Footer';
 import { BrowserRouter } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter basename='/'>
       <Header/>

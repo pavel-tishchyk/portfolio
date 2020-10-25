@@ -1,7 +1,9 @@
 import React from 'react';
-import { Container, Row, Col, Nav, CardColumns, Card, Modal, Button, Image } from 'react-bootstrap';
+import { Container, Row, Col, Nav, CardColumns, Modal, Button, Image } from 'react-bootstrap';
+import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faInfo, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import PortfolioItem from './PortfolioItem';
 
 const getProjectTypeName = (type) => {
   switch(type) {
@@ -59,50 +61,46 @@ const Portfolio = () => {
     setShow(true);
   };
 
-  const cards = filteredProjects.map((project) => (
-    <Card className='animated fadeInUp' onClick={() => onClick(project.id)} key={project.id}>
-      <Card.Img src={require(`../../images/projects/${project.images[0]}`)}/>
-      <Card.Body>
-        <FontAwesomeIcon icon={faInfo}/>
-        <FontAwesomeIcon icon={faSearch}/>
-        <h5 className='title'>{project.name}</h5>
-        <span className='sub-title'>{getProjectTypeName(project.type)}</span>
-      </Card.Body>
-    </Card>
+  const cards = filteredProjects.map((project, i) => (
+    <PortfolioItem key={project.id} onClick={onClick} {...project} delay={i*100}/>
   ));
 
   return (
     <section className='portfolio' id='portfolio'>
       <Container>
         <Row className='section-separator'>
-          <Col sm={12} className='section-title animated fadeInUp'>
-            <h3>Recent Portfolio</h3>
+          <Col sm={12} className='section-title'>
+            <Fade bottom opposite delay={100}>
+              <h3>Recent Portfolio</h3>
+            </Fade>
           </Col>
           <Col sm={12} className='portfolio-details'>
             <Col sm={12} className='portfolio-nav'>
-              <Nav 
-                as='ul' 
-                className="justify-content-center" 
-                defaultActiveKey=''
-                onSelect={onSelect}>
-                <Nav.Item as='li'>
-                  <Nav.Link eventKey="">All Categories</Nav.Link>
-                </Nav.Item>
-                <Nav.Item as='li'>
-                  <Nav.Link eventKey="web">Web App</Nav.Link>
-                </Nav.Item>
-                <Nav.Item as='li'>
-                  <Nav.Link eventKey="mobile">Mobile App</Nav.Link>
-                </Nav.Item>
-                <Nav.Item as='li'>
-                  <Nav.Link eventKey="design">Web Design</Nav.Link>
-                </Nav.Item>
-              </Nav>
+              <Fade bottom opposite delay={200}>
+                <Nav 
+                  as='ul' 
+                  className="justify-content-center" 
+                  defaultActiveKey=''
+                  onSelect={onSelect}>
+                  <Nav.Item as='li'>
+                    <Nav.Link eventKey="">All Categories</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item as='li'>
+                    <Nav.Link eventKey="web">Web App</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item as='li'>
+                    <Nav.Link eventKey="mobile">Mobile App</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item as='li'>
+                    <Nav.Link eventKey="design">Web Design</Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </Fade>
             </Col>
             <Col sm={12} className='portfolio-gallery'>
-              <CardColumns>
-                {cards}
-              </CardColumns>
+                <CardColumns>
+                  {cards}
+                </CardColumns>
             </Col>
             <Modal
               centered

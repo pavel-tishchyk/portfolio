@@ -523,29 +523,17 @@
     100% { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes fadeInUp {
-  from {
-      transform: translate3d(0,40px,0)
-  }
-
-  to {
-      transform: translate3d(0,0,0);
-      opacity: 1
-  }
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
-@-webkit-keyframes fadeInUp {
-  from {
-      transform: translate3d(0,40px,0)
-  }
-
-  to {
-      transform: translate3d(0,0,0);
-      opacity: 1
-  }
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
-.animated {
+.wow {
   animation-duration: 1s;
   animation-delay: 1s;
   animation-fill-mode: both;
@@ -554,8 +542,3 @@
   -webkit-animation-fill-mode: both
 }
 
-.fadeInUp {
-  opacity: 0;
-  animation-name: fadeInUp;
-  -webkit-animation-name: fadeInUp;
-}
