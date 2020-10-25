@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactWOW from 'react-wow';
 import { faFacebook, faLinkedin, faInstagram ,faGithub, faDribbble } from '@fortawesome/free-brands-svg-icons';
 import SocialItem from './SocialItem';
 
@@ -13,13 +12,11 @@ const SocialList = () => {
   ];
 
   return (
-    <ReactWOW animation='fadeInUp' duration='0.8s' delay='0.7s'>
       <ul className='social-icon'>
         {items.map(item => (
           <SocialItem key={item.id} {...item} />
         ))}
       </ul>
-    </ReactWOW>
   );
 }
 
