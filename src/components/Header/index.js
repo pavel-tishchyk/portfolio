@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import Fade from 'react-reveal/Fade';
 import logo from '../../images/logo.svg';
 import { Container, Navbar, Nav, Image } from 'react-bootstrap';
 import Scrollspy from 'react-scrollspy';
@@ -25,7 +24,6 @@ const Header = ({ history }) => {
     <header className='header' id='header'>
         <Navbar variant='dark' expand='lg' fixed="top" ref={navbar} collapseOnSelect>
           <Container>
-            <Fade bottom opposite>
             <Navbar.Brand href="#">
               <Image fluid src={logo} width="30"
                 height="30" alt="logo"/>
@@ -38,7 +36,7 @@ const Header = ({ history }) => {
                 offset={-5}
                 items={['home', 'about', 'skills', 'experience', 'portfolio', 'contact']} 
                 currentClassName="active"
-                onUpdate={(e) => history.push(`#${e.id}`)}
+                onUpdate={(e) => e.id && history.push(`#${e.id}`)}
                 activeKey={history.location.hash}
                 >
                 <Nav.Item as='li'>
@@ -61,7 +59,6 @@ const Header = ({ history }) => {
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>
-            </Fade>
           </Container>
         </Navbar>
     </header>
