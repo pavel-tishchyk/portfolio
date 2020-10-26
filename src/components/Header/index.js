@@ -6,6 +6,7 @@ import Scrollspy from 'react-scrollspy';
 
 const Header = ({ history }) => {
   const navbar = React.useRef(null);
+  const collapse = React.useRef(null);
 
   const handleScroll = () => {
     if (window.pageYOffset) {
@@ -15,6 +16,20 @@ const Header = ({ history }) => {
     }
   }
   
+  const onToggle = () => {
+    const scrolled = navbar.current.classList.contains('scrolled');
+    const show = collapse.current.classList.contains('show')
+    
+    if(!scrolled) {
+      if(!show)  {
+        navbar.current.classList.add('scrolled')
+      } else {
+        navbar.current.classList.remove('scrolled')
+      }
+    }
+    
+  }
+
   React.useEffect(() => {
     document.addEventListener('scroll', handleScroll);
     return () => document.removeEventListener('scroll', handleScroll);
@@ -22,21 +37,24 @@ const Header = ({ history }) => {
 
   return (
     <header className='header' id='header'>
-        <Navbar variant='dark' expand='lg' fixed="top" ref={navbar} collapseOnSelect>
+        <Navbar 
+          variant='dark' expand='lg' 
+          fixed="top" ref={navbar} collapseOnSelect
+          onToggle={onToggle}>
           <Container>
             <Navbar.Brand href="#">
               <Image fluid src={logo} width="30"
                 height="30" alt="logo"/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="header-navbar-nav"/>
-            <Navbar.Collapse id="header-navbar-nav">
+            <Navbar.Collapse id="header-navbar-nav" ref={collapse}>
               <Nav 
                 as={Scrollspy} 
                 className="mr-0 ml-auto"
                 offset={-5}
                 items={['home', 'about', 'skills', 'experience', 'portfolio', 'contact']} 
                 currentClassName="active"
-                onUpdate={(e) => e.id && history.push(`#${e.id}`)}
+                onUpdate={(e) => e && history.push(`#${e.id}`)}
                 activeKey={history.location.hash}
                 >
                 <Nav.Item as='li'>

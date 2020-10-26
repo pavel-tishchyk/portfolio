@@ -113,33 +113,37 @@ const Portfolio = () => {
                 <Container>
                   <Row>
                     <Col sm={5}>
-                      <h2>
-                        {currentProject.name} - 
-                        <span> {getProjectTypeName(currentProject.type)}</span>
-                      </h2>
-                      <p>{currentProject.description}</p>
-                      <div className='about-tag'>
-                        <ul>
-                          {currentProject.tags.map((tag, i) => (
-                            <li key={i}>
-                              <span>{tag}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      <div className='project-info'>
+                        <h2>
+                          {currentProject.name} - 
+                          <span> {getProjectTypeName(currentProject.type)}</span>
+                        </h2>
+                        <p>{currentProject.description}</p>
+                        <div className='about-tag'>
+                          <ul>
+                            {currentProject.tags.map((tag, i) => (
+                              <li key={i}>
+                                <span>{tag}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <Button 
+                          variant="warning" 
+                          href={currentProject.link}
+                          rel="noopener noreferrer" 
+                          target="_blank"
+                        >
+                          Live demo
+                        </Button>
                       </div>
-                      <Button 
-                        variant="warning" 
-                        href={currentProject.link}
-                        rel="noopener noreferrer" 
-                        target="_blank"
-                      >
-                        Live demo
-                      </Button>
                     </Col>
                     <Col sm={7}>
-                      {currentProject.images.slice(1).map((image, i) => (
-                        <Image key={i} fluid src={require(`../../images/projects/${image}`)}/>
-                      ))}
+                      <div className='project-images'>
+                        {currentProject.images.slice(1).map((image, i) => (
+                          <Image key={i} fluid src={require(`../../images/projects/${image}`)}/>
+                        ))}
+                      </div>
                     </Col>
                   </Row>
                   <FontAwesomeIcon 
