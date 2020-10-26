@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Service from './components/Service';
@@ -13,7 +13,7 @@ import { BrowserRouter } from 'react-router-dom';
 const App = () => {
   return (
     <BrowserRouter basename='/'>
-      <Header/>
+      {/* <Header/> */}
       <Home/>
       <About/>
       <Service/>
