@@ -4,19 +4,19 @@ import SocialItem from './SocialItem';
 
 const SocialList = () => {
   const items = [
-    {id: 0, link: '#link1', icon: faFacebook},
-    {id: 1, link: '#link1', icon: faLinkedin},
-    {id: 2, link: '#link1', icon: faGithub},
-    {id: 3, link: '#link1', icon: faInstagram},
-    {id: 4, link: '#link1', icon: faDribbble},
+    {id: 0, link: 'https://www.facebook.com/pavel.tishchyk.1/', icon: faFacebook},
+    {id: 1, link: 'https://www.linkedin.com/in/pavel-tishchuk/', icon: faLinkedin},
+    {id: 2, link: 'https://github.com/pavel-tishchyk/', icon: faGithub},
+    {id: 3, link: 'https://www.instagram.com/shaky_ua/', icon: faInstagram},
+    {id: 4, link: 'https://portfolio-nu-blush.vercel.app/', icon: faDribbble},
   ];
 
   return (
-      <ul className='social-icon'>
-        {items.map(item => (
-          <SocialItem key={item.id} {...item} />
-        ))}
-      </ul>
+    <ul className='social-icon'>
+      {items.map(item => (
+        <SocialItem key={item.id} {...item} />
+      ))}
+    </ul>
   );
 }
 

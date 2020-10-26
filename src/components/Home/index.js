@@ -30,7 +30,7 @@ const Home = () => {
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faMapMarker} />
-                  <address>35, Lomonosova, Kyiv, Ukraine</address>
+                  <address>Kyiv, Ukraine</address>
                 </li>
               </Fade>
             </ul>

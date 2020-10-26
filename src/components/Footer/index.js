@@ -50,7 +50,7 @@ const Footer = () => {
                       </div>
                       <div className='each-info'>
                         <h4>Address</h4>
-                        <address>35, Lomonosova, Kyiv, Ukraine</address>
+                        <address>Kyiv, Ukraine</address>
                       </div>
                     </div>
                   </Fade>
