@@ -3,7 +3,7 @@ import { Row, Col, Image, Button } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import image from '../../images/ab-img.webp';
+import image from '../../images/ab-img.png';
 import file from '../../cv/Pavel_Tishchyk_-_Junior_Front_end_Developer_1.pdf';
 import withSectionWrapper from '../../hocs/withSectionWrapper';
 import TagsList from './TagsList';
