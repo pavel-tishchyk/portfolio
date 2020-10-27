@@ -27,7 +27,7 @@ const Portfolio = () => {
       description: 'Wrap is a clean and elegant Multipurpose Landing Page Template. It will fit perfectly for Startup, Web App or any type of Web Services.It has 4 background styles with 6 homepage styles. 6 pre-defined color scheme. All variations are organized separately so you can use / customize the template very easily',
       tags: ['HTML', 'CSS', 'TypeScript', 'NextJS', 'React', 'Redux', 'Semantic UI'],
       link: 'https://developers-today-test.now.sh',
-      images: ['blog.png', 'blog-1.png', 'blog-2.png', 'blog-3.png']
+      images: ['blog.webp', 'blog-1.webp', 'blog-2.webp', 'blog-3.webp']
     },
     {
       id: 1, 
@@ -36,7 +36,7 @@ const Portfolio = () => {
       description: 'Wrap is a clean and elegant Multipurpose Landing Page Template. It will fit perfectly for Startup, Web App or any type of Web Services.It has 4 background styles with 6 homepage styles. 6 pre-defined color scheme. All variations are organized separately so you can use / customize the template very easily',
       tags: ['HTML', 'SCSS', 'JavaScript', 'React', 'Bootstrap'],
       link: 'https://localhost:3000',
-      images: ['personal.png']
+      images: ['personal.webp']
     },
     {
       id: 2, 
@@ -45,7 +45,7 @@ const Portfolio = () => {
       description: 'Wrap is a clean and elegant Multipurpose Landing Page Template. It will fit perfectly for Startup, Web App or any type of Web Services.It has 4 background styles with 6 homepage styles. 6 pre-defined color scheme. All variations are organized separately so you can use / customize the template very easily',
       tags: ['HTML', 'CSS', 'JavaScript'],
       link: 'https://waxom-theta.vercel.app',
-      images: ['waxom.png', 'waxom-1.png', 'waxom-2.png', 'waxom-3.png']
+      images: ['waxom.webp', 'waxom-1.webp', 'waxom-2.webp', 'waxom-3.webp']
     },
   ])
   const [filteredProjects, setFilteredProjects] = React.useState(projects);
