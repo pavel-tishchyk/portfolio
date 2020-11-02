@@ -31,7 +31,7 @@ const Experience = () => {
           </Fade>
           <div className="education-deatils">
             {education.map(item => (
-              <ExperienceItem id={item.id} {...item} />
+              <ExperienceItem key={item.id} {...item} />
             ))}
           </div>
         </div>
@@ -43,7 +43,7 @@ const Experience = () => {
           </Fade>
           <div className="experience-deatils">
             {education.map(item => (
-              <ExperienceItem id={item.id} {...item} />
+              <ExperienceItem key={item.id} {...item} />
             ))}
           </div>
         </div>
